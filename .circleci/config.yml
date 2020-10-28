@@ -1,8 +1,23 @@
 version: 2.1
-orbs:
-  node: circleci/node@3.0.0
+jobs:
+  build-and-test:
+    docker:
+      - image: node:latest
+    steps:
+      - checkout
+      - run:
+          name: Install Package
+          command: |
+            yarn install
+      - run:
+          name: build
+          command: |
+            yarn build
+      - run:
+          name: test
+          command: |
+            yarn test
 workflows:
-  node-tests:
+  main:
     jobs:
-      - node/test
-
+      - build-and-test
