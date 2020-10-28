@@ -10,11 +10,11 @@ jobs:
           command: |
             yarn install
       - run:
-          name: build
+          name: Build
           command: |
             yarn build
       - run:
-          name: test
+          name: Test
           command: |
             yarn test
 workflows:
