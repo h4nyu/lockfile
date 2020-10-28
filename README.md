@@ -6,8 +6,7 @@ import { Lock } from "@oniku/lockfile";
 
 const lock = Lock({ dir: "/tmp" });
 
-await lock.auto(async () => {
-  // do something
+const res = await lock.auto(async () => {
+  // do or return something
 });
-
 ```
